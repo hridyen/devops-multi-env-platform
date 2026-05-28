@@ -1,0 +1,15 @@
+---
+- name: Configure Jenkins Server
+  hosts: jenkins
+  become: yes
+
+  roles:
+    - docker
+    - jenkins
+
+- name: Configure App Server
+  hosts: app
+  become: yes
+
+  roles:
+    - docker
