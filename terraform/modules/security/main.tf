@@ -26,11 +26,20 @@ resource "aws_security_group" "web_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  
 
   ingress {
   description = "Jenkins Access"
   from_port   = 8080
   to_port     = 8080
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+  ingress {
+  description = "Flask Dev App"
+  from_port   = 3001
+  to_port     = 3001
   protocol    = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
 }
